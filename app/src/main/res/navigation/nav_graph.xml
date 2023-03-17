@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/landingFragment">
 
     <fragment
         android:id="@+id/landingFragment"
@@ -48,8 +48,8 @@
         android:label="fragment_create_event"
         tools:layout="@layout/fragment_create_event" >
         <action
-            android:id="@+id/action_createEventFragment_to_successFragment"
-            app:destination="@id/successFragment" />
+            android:id="@+id/action_createEventFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/createReminderFragment"
@@ -57,8 +57,8 @@
         android:label="fragment_create_reminder"
         tools:layout="@layout/fragment_create_reminder" >
         <action
-            android:id="@+id/action_createReminderFragment_to_successFragment"
-            app:destination="@id/successFragment" />
+            android:id="@+id/action_createReminderFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/createRoutineFragment"
@@ -93,8 +93,8 @@
         android:label="fragment_routine_suggested"
         tools:layout="@layout/fragment_routine_suggested" >
         <action
-            android:id="@+id/action_routineSuggestedFragment_to_successFragment"
-            app:destination="@id/successFragment" />
+            android:id="@+id/action_routineSuggestedFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/signinProfileFragment"
@@ -103,15 +103,6 @@
         tools:layout="@layout/fragment_signin_profile" >
         <action
             android:id="@+id/action_signinProfileFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/successFragment"
-        android:name="com.moviles.fitnessalarm.SuccessFragment"
-        android:label="fragment_success"
-        tools:layout="@layout/fragment_success" >
-        <action
-            android:id="@+id/action_successFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
     <fragment

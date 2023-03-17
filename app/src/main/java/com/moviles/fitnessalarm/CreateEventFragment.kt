@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import com.moviles.fitnessalarm.databinding.FragmentCreateEventBinding
@@ -52,8 +53,14 @@ class CreateEventFragment : Fragment() {
         }
 
         binding.btnSave.setOnClickListener {
-            it.findNavController()
-                .navigate(CreateEventFragmentDirections.actionCreateEventFragmentToSuccessFragment())
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle(resources.getString(R.string.title_reminder))
+                .setMessage(resources.getString(R.string.supporting_text_reminder))
+                .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
+                    it.findNavController()
+                        .navigate(CreateEventFragmentDirections.actionCreateEventFragmentToHomeFragment())
+                }
+                .show()
         }
         return binding.root
     }

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.MaterialTimePicker.INPUT_MODE_KEYBOARD
 import com.google.android.material.timepicker.TimeFormat
@@ -55,8 +56,14 @@ class RoutineSuggestedFragment : Fragment() {
         }
 
         binding.activate.setOnClickListener {
-            it.findNavController()
-                .navigate(RoutineSuggestedFragmentDirections.actionRoutineSuggestedFragmentToSuccessFragment())
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle(resources.getString(R.string.title_reminder))
+                .setMessage(resources.getString(R.string.supporting_text_reminder))
+                .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
+                    it.findNavController()
+                        .navigate(RoutineSuggestedFragmentDirections.actionRoutineSuggestedFragmentToHomeFragment())
+                }
+                .show()
         }
 
         return binding.root

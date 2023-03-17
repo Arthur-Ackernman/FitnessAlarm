@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/landingFragment"
+        android:name="com.moviles.fitnessalarm.LandingFragment"
+        tools:layout="@layout/fragment_landing" >
+        <action
+            android:id="@+id/action_landingFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_landingFragment_to_signinFragment"
+            app:destination="@id/signinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.moviles.fitnessalarm.LoginFragment"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.moviles.fitnessalarm.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createRoutineFragment"
+            app:destination="@id/createRoutineFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createReminderFragment"
+            app:destination="@id/createReminderFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createEventFragment"
+            app:destination="@id/createEventFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createEventFragment"
+        android:name="com.moviles.fitnessalarm.CreateEventFragment"
+        android:label="fragment_create_event"
+        tools:layout="@layout/fragment_create_event" >
+        <action
+            android:id="@+id/action_createEventFragment_to_successFragment"
+            app:destination="@id/successFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createReminderFragment"
+        android:name="com.moviles.fitnessalarm.CreateReminderFragment"
+        android:label="fragment_create_reminder"
+        tools:layout="@layout/fragment_create_reminder" >
+        <action
+            android:id="@+id/action_createReminderFragment_to_successFragment"
+            app:destination="@id/successFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createRoutineFragment"
+        android:name="com.moviles.fitnessalarm.CreateRoutineFragment"
+        android:label="fragment_create_routine"
+        tools:layout="@layout/fragment_create_routine" >
+        <action
+            android:id="@+id/action_createRoutineFragment_to_routineSetupFragment"
+            app:destination="@id/routineSetupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.moviles.fitnessalarm.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/routineSetupFragment"
+        android:name="com.moviles.fitnessalarm.RoutineSetupFragment"
+        android:label="fragment_routine_setup"
+        tools:layout="@layout/fragment_routine_setup" >
+        <action
+            android:id="@+id/action_routineSetupFragment_to_routineSuggestedFragment"
+            app:destination="@id/routineSuggestedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/routineSuggestedFragment"
+        android:name="com.moviles.fitnessalarm.RoutineSuggestedFragment"
+        android:label="fragment_routine_suggested"
+        tools:layout="@layout/fragment_routine_suggested" >
+        <action
+            android:id="@+id/action_routineSuggestedFragment_to_successFragment"
+            app:destination="@id/successFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signinProfileFragment"
+        android:name="com.moviles.fitnessalarm.SigninProfileFragment"
+        android:label="fragment_signin_profile"
+        tools:layout="@layout/fragment_signin_profile" >
+        <action
+            android:id="@+id/action_signinProfileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="com.moviles.fitnessalarm.SuccessFragment"
+        android:label="fragment_success"
+        tools:layout="@layout/fragment_success" >
+        <action
+            android:id="@+id/action_successFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signinFragment"
+        android:name="com.moviles.fitnessalarm.SigninFragment"
+        android:label="SigninFragment" >
+        <action
+            android:id="@+id/action_signinFragment_to_signinProfileFragment"
+            app:destination="@id/signinProfileFragment" />
+    </fragment>
+</navigation>
